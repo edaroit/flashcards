@@ -1,19 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-})
+import { ThemeProvider } from 'styled-components'
+import Home from './components/Home'
+import theme from './utils/theme'
 
 const App = () => (
-  <View style={styles.container}>
-    <Text>Open up App.js to start working on your app!</Text>
-  </View>
+  <ThemeProvider theme={theme}>
+    <Home />
+  </ThemeProvider>
 )
 
 export default App
