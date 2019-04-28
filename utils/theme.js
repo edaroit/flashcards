@@ -1,7 +1,7 @@
-const black = '#000'
-const lightBlue = '#949cdd'
-const darkBlue = '#5366e7'
-const white = '#fff'
+export const black = '#000'
+export const lightBlue = '#949cdd'
+export const darkBlue = '#5366e7'
+export const white = '#fff'
 
 const theme = {
   black,
