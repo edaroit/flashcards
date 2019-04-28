@@ -5,7 +5,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "format": "prettier --write '**/*.js'"
+    "format": "prettier --write '**/*.js'",
+    "lint": "eslint --ext .js ."
   },
   "dependencies": {
     "expo": "^32.0.0",
