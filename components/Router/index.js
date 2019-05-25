@@ -12,7 +12,7 @@ const RouteConfigs = {
   Home: {
     screen: Home,
     navigationOptions: {
-      tabBarLabel: 'Home',
+      tabBarLabel: 'Decks',
       tabBarIcon: () => (
         <MaterialCommunityIcons
           name="cards-outline"
