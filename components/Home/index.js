@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Container, Header, Title } from './styles'
@@ -12,14 +13,21 @@ class Home extends Component {
   }
 
   render() {
-    const { decks } = this.props
+    const { decks, navigation } = this.props
+    const { navigate } = navigation
+
     return (
       <Container>
         <Header>
           <Title>Flashcards</Title>
         </Header>
         {decks.map(deck => (
-          <Deck {...deck} />
+          <TouchableOpacity
+            key={deck.id}
+            onPress={() => navigate('DeckDetails', { deckId: deck.id })}
+          >
+            <Deck {...deck} />
+          </TouchableOpacity>
         ))}
       </Container>
     )
