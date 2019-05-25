@@ -5,6 +5,6 @@ import Card from '../Card'
 export default ({ title = 'ueba', cards = [] }) => (
   <Card>
     <Title>{title}</Title>
-    <Count>{cards.lenght}</Count>
+    <Count>{cards.length}</Count>
   </Card>
 )
