@@ -1,12 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Container } from './styles'
-import Deck from '../Deck'
+import { Button, Container, Count, Title } from './styles'
 
 const DeckDetails = ({ deck }) => {
+  const { title, cards } = deck
+
   return (
     <Container>
-      <Deck {...deck} />
+      <Title>{title}</Title>
+      <Count>{cards.length}</Count>
+      <Button title="Start a Quiz" />
+      <Button title="Create New Question" />
     </Container>
   )
 }
