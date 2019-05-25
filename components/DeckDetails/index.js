@@ -2,15 +2,19 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Button, Container, Count, Title } from './styles'
 
-const DeckDetails = ({ deck }) => {
+const DeckDetails = ({ deck, navigation }) => {
   const { title, cards } = deck
+  const { navigate } = navigation
 
   return (
     <Container>
       <Title>{title}</Title>
       <Count>{cards.length}</Count>
-      <Button title="Start a Quiz" />
-      <Button title="Create New Question" />
+      <Button onPress={() => navigate('Quiz')} title="Start a Quiz" />
+      <Button
+        onPress={() => navigate('NewQuestion')}
+        title="Create New Question"
+      />
     </Container>
   )
 }
