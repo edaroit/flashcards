@@ -7,6 +7,7 @@ import {
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { darkBlue, white } from '../../utils/theme'
 import Home from '../Home'
+import DeckDetails from '../DeckDetails'
 
 const RouteConfigs = {
   Home: {
@@ -55,6 +56,7 @@ const MainNavigator = {
       header: null,
     },
   },
+  DeckDetails: { screen: DeckDetails },
 }
 
 export default createAppContainer(createStackNavigator(MainNavigator))
