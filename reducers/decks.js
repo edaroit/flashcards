@@ -14,7 +14,7 @@ const reducer = handleActions(
     [saveCard]: (state, action) => ({
       ...state,
       decks: state.decks.map(deck => {
-        if (deck.title === action.payload.deck.title) {
+        if (deck.id === action.payload.deckId) {
           return {
             ...deck,
             cards: [...deck.cards, action.payload.card],
