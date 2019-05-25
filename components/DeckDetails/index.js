@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Button, Container, Count, Title } from './styles'
 
 const DeckDetails = ({ deck, navigation }) => {
-  const { title, cards } = deck
+  const { id, title, cards } = deck
   const { navigate } = navigation
 
   return (
@@ -12,17 +12,15 @@ const DeckDetails = ({ deck, navigation }) => {
       <Count>{cards.length}</Count>
       <Button onPress={() => navigate('Quiz')} title="Start a Quiz" />
       <Button
-        onPress={() => navigate('NewQuestion')}
+        onPress={() => navigate('NewQuestion', { deckId: id })}
         title="Create New Question"
       />
     </Container>
   )
 }
 
-const mapStateToProps = (state, { navigation }) => ({
+export default connect((state, { navigation }) => ({
   deck: state.decks.decks.find(
     deck => deck.id === navigation.getParam('deckId'),
   ),
-})
-
-export default connect(mapStateToProps)(DeckDetails)
+}))(DeckDetails)
