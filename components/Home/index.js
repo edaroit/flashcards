@@ -1,12 +1,10 @@
 import React from 'react'
 import { Container, Header, Title } from './styles'
 
-const Home = () => (
+export default () => (
   <Container>
     <Header>
       <Title>Flashcards</Title>
     </Header>
   </Container>
 )
-
-export default Home
