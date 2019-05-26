@@ -27,7 +27,7 @@ class NewDeck extends Component {
           placeholder="Important Subject"
           onChangeText={value => this.setState({ title: value })}
         />
-        <Button onPress={() => this.handleSubmit()} title="Send" />
+        <Button onPress={() => this.handleSubmit()} title="Submit" />
       </Container>
     )
   }

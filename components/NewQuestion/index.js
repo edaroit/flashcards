@@ -38,7 +38,7 @@ class NewQuestion extends Component {
           placeholder="No."
           onChangeText={value => this.setState({ answer: value })}
         />
-        <Button onPress={() => this.handleSubmit()} title="Send" />
+        <Button onPress={() => this.handleSubmit()} title="Submit" />
       </Container>
     )
   }
