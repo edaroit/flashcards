@@ -9,7 +9,7 @@ const DeckDetails = ({ deck, navigation }) => {
   return (
     <Container>
       <Title>{title}</Title>
-      <Count>{cards.length}</Count>
+      <Count>{cards.length} cards</Count>
       <Button
         onPress={() => navigate('Quiz', { deckId: id })}
         title="Start a Quiz"
