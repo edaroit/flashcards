@@ -13,8 +13,8 @@ class NewDeck extends Component {
     const { title } = this.state
     const id = uuid()
     await this.props.addDeck({ id, title })
-    navigation.navigate('DeckDetails', { deckId: id })
     this.setState({ title: '' })
+    navigation.navigate('DeckDetails', { deckId: id })
   }
 
   render() {
