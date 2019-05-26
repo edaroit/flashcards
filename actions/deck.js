@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions'
-import { getDecks, postCard, updateDecks } from '../utils/api'
+import { getDecks, postCard, postDeck } from '../utils/api'
 
 export const fetchDecks = createAction('FETCH_DECKS')
 export const saveDeck = createAction('SAVE_DECK')
@@ -11,9 +11,9 @@ export const loadDecks = () => async dispatch => {
 }
 
 export const addDeck = deck => async dispatch => {
-  const decks = await getDecks()
-  await updateDecks([...decks, deck])
-  return dispatch(saveDeck({ deck }))
+  const updatedDeck = { ...deck, cards: [] }
+  await postDeck(updatedDeck)
+  return dispatch(saveDeck({ deck: updatedDeck }))
 }
 
 export const addCard = (deckId, card) => async dispatch => {

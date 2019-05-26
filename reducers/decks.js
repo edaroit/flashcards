@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions'
-import { fetchDecks, saveCard } from '../actions/deck'
+import { fetchDecks, saveCard, saveDeck } from '../actions/deck'
 
 const initialState = {
   decks: [],
@@ -23,6 +23,10 @@ const reducer = handleActions(
 
         return deck
       }),
+    }),
+    [saveDeck]: (state, action) => ({
+      ...state,
+      decks: [...state.decks, action.payload.deck],
     }),
   },
   initialState,

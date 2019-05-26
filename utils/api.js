@@ -23,5 +23,9 @@ export const postCard = (deckId, card) => {
   })
 }
 
-export const updateDecks = decks =>
-  AsyncStorage.setItem(DECKS_STORAGE_KEY, JSON.stringify(decks))
+export const postDeck = deck => {
+  return AsyncStorage.getItem(DECKS_STORAGE_KEY).then(results => {
+    const decks = JSON.parse(results)
+    AsyncStorage.setItem(DECKS_STORAGE_KEY, JSON.stringify([...decks, deck]))
+  })
+}
