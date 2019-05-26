@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { SafeAreaView, TextInput } from 'react-native'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { addCard } from '../../actions/deck'
-import { Button } from './styles'
+import { Button, Container, Input } from './styles'
 
 class NewQuestion extends Component {
   constructor() {
@@ -28,19 +27,19 @@ class NewQuestion extends Component {
     const { question, answer } = this.state
 
     return (
-      <SafeAreaView>
-        <TextInput
+      <Container>
+        <Input
           value={question}
           placeholder="What's the worst React derivate?"
           onChangeText={value => this.setState({ question: value })}
         />
-        <TextInput
+        <Input
           value={answer}
           placeholder="React Native"
           onChangeText={value => this.setState({ answer: value })}
         />
         <Button onPress={() => this.handleSubmit()} title="Send" />
-      </SafeAreaView>
+      </Container>
     )
   }
 }
