@@ -1,7 +1,7 @@
 import { AsyncStorage } from 'react-native'
 import { Notifications, Permissions } from 'expo'
 
-const NOTIFICATION_KEY = 'notifications'
+const NOTIFICATION_KEY = 'RNDFlashcards:notifications'
 
 const createNotification = () => ({
   title: 'Daily Train',
