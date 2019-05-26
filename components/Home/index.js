@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Button, Container, Header, Title } from './styles'
+import {
+  Button,
+  Container,
+  FloatButton,
+  FloatText,
+  Header,
+  Title,
+} from './styles'
 import Deck from '../Deck'
 import { loadDecks } from '../../actions/deck'
 
@@ -28,6 +35,9 @@ class Home extends Component {
             <Deck {...deck} />
           </Button>
         ))}
+        <FloatButton onPress={() => navigate('NewDeck')}>
+          <FloatText>Create a Deck</FloatText>
+        </FloatButton>
       </Container>
     )
   }
