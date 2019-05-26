@@ -6,16 +6,12 @@ import { addDeck } from '../../actions/deck'
 import { Button, Container, Input } from './styles'
 
 class NewDeck extends Component {
-  constructor() {
-    super()
-    this.state = { title: '' }
-  }
+  state = { title: '' }
 
   async handleSubmit() {
     const { navigation } = this.props
     const { title } = this.state
     const id = uuid()
-    // eslint-disable-next-line react/destructuring-assignment
     await this.props.addDeck({ id, title })
     navigation.navigate('DeckDetails', { deckId: id })
     this.setState({ title: '' })
