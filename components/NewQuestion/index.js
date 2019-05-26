@@ -5,15 +5,12 @@ import { addCard } from '../../actions/deck'
 import { Button, Container, Input } from './styles'
 
 class NewQuestion extends Component {
-  constructor() {
-    super()
-    this.state = {
-      question: '',
-      answer: '',
-    }
+  state = {
+    question: '',
+    answer: '',
   }
 
-  handleSubmit() {
+  handleSubmit = () => {
     const { navigation } = this.props
     const { question, answer } = this.state
     const deckId = navigation.getParam('deckId')
@@ -37,7 +34,7 @@ class NewQuestion extends Component {
           placeholder="No."
           onChangeText={value => this.setState({ answer: value })}
         />
-        <Button onPress={() => this.handleSubmit()} title="Submit" />
+        <Button onPress={this.handleSubmit} title="Submit" />
       </Container>
     )
   }

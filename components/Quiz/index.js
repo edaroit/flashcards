@@ -9,12 +9,9 @@ import {
 } from '../../utils/notification'
 
 class Quiz extends Component {
-  constructor() {
-    super()
-    this.state = {
-      cardIndex: 0,
-      correctAnswers: 0,
-    }
+  state = {
+    cardIndex: 0,
+    correctAnswers: 0,
   }
 
   async componentDidUpdate() {
