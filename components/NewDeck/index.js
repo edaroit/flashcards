@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import uuid from 'uuid/v4'
 import { addDeck } from '../../actions/deck'
-import { Button, Container, Input } from './styles'
+import { Button, Container, Header, Input, Title } from './styles'
 
 class NewDeck extends Component {
   state = { title: '' }
@@ -20,6 +20,9 @@ class NewDeck extends Component {
   render() {
     return (
       <Container>
+        <Header>
+          <Title>Flashcards</Title>
+        </Header>
         <Input
           placeholder="Title"
           onChangeText={value => this.setState({ title: value })}

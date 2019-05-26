@@ -5,7 +5,7 @@ import {
   createStackNavigator,
   HeaderBackButton,
 } from 'react-navigation'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { Feather, MaterialCommunityIcons } from '@expo/vector-icons'
 import { darkBlue, white } from '../../utils/theme'
 import Home from '../Home'
 import DeckDetails from '../DeckDetails'
@@ -25,6 +25,13 @@ const RouteConfigs = {
           color={darkBlue}
         />
       ),
+    },
+  },
+  NewDeck: {
+    screen: NewDeck,
+    navigationOptions: {
+      tabBarLabel: 'Create Deck',
+      tabBarIcon: () => <Feather name="plus" size={30} color={darkBlue} />,
     },
   },
 }
@@ -75,7 +82,7 @@ const MainNavigator = {
   NewDeck: {
     screen: NewDeck,
     navigationOptions: {
-      title: 'Create a Deck',
+      title: 'Create Deck',
     },
   },
   NewQuestion: {
