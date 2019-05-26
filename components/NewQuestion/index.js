@@ -17,7 +17,6 @@ class NewQuestion extends Component {
     const { navigation } = this.props
     const { question, answer } = this.state
     const deckId = navigation.getParam('deckId')
-    // eslint-disable-next-line react/destructuring-assignment
     this.props.addCard(deckId, { question, answer })
     navigation.goBack()
     this.setState({ question: '', answer: '' })

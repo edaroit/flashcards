@@ -8,7 +8,6 @@ import { loadDecks } from '../../actions/deck'
 
 class Home extends Component {
   componentDidMount() {
-    // eslint-disable-next-line react/destructuring-assignment
     this.props.loadDecks()
   }
 

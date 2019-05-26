@@ -12,6 +12,7 @@
     "prettier/prettier": [
       "error"
     ],
+    "react/destructuring-assignment": 0,
     "react/jsx-filename-extension": [
       1,
       {
