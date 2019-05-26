@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { SafeAreaView, Text } from 'react-native'
+import { SafeAreaView } from 'react-native'
 import { connect } from 'react-redux'
 import QuizItem from '../QuizItem'
 import QuizResult from '../QuizResult'
