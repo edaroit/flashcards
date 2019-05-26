@@ -3,6 +3,7 @@ import {
   createBottomTabNavigator,
   createAppContainer,
   createStackNavigator,
+  HeaderBackButton,
 } from 'react-navigation'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { darkBlue, white } from '../../utils/theme'
@@ -59,7 +60,17 @@ const MainNavigator = {
       header: null,
     },
   },
-  DeckDetails: { screen: DeckDetails },
+  DeckDetails: {
+    screen: DeckDetails,
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: (
+        <HeaderBackButton
+          onPress={() => navigation.navigate('Home')}
+          backTitleVisible
+        />
+      ),
+    }),
+  },
   NewDeck: { screen: NewDeck },
   NewQuestion: { screen: NewQuestion },
   Quiz: { screen: Quiz },
