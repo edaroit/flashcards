@@ -1,6 +1,5 @@
 import React from 'react'
-import { Count, Title } from './styles'
-import Card from '../Card'
+import { Card, Count, Title } from './styles'
 
 export default ({ title = '', cards = [] }) => (
   <Card>
