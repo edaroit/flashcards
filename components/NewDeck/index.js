@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import { SafeAreaView, TextInput } from 'react-native'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import uuid from 'uuid/v4'
 import { addDeck } from '../../actions/deck'
-import { Button } from './styles'
+import { Button, Container, Input } from './styles'
 
 class NewDeck extends Component {
   constructor() {
@@ -23,17 +22,14 @@ class NewDeck extends Component {
   }
 
   render() {
-    const { title } = this.state
-
     return (
-      <SafeAreaView>
-        <TextInput
-          value={title}
-          placeholder="React Native Studies"
+      <Container>
+        <Input
+          placeholder="Title"
           onChangeText={value => this.setState({ title: value })}
         />
         <Button onPress={() => this.handleSubmit()} title="Send" />
-      </SafeAreaView>
+      </Container>
     )
   }
 }

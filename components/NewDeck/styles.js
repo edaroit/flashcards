@@ -1,4 +1,11 @@
 import styled from 'styled-components/native'
-import { Button as BaseButton } from 'react-native-elements'
+import { Button as BaseButton, Input as BaseInput } from 'react-native-elements'
 
-export const Button = styled(BaseButton)``
+export const Button = styled(BaseButton)`
+  margin-top: 20px;
+  padding: 10px;
+`
+
+export const Container = styled.SafeAreaView``
+
+export const Input = styled(BaseInput)``
