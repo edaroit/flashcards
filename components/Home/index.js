@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { FlatList } from 'react-native'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {
@@ -27,14 +28,17 @@ class Home extends Component {
         <Header>
           <Title>Flashcards</Title>
         </Header>
-        {decks.map(deck => (
-          <Button
-            key={deck.id}
-            onPress={() => navigate('DeckDetails', { deckId: deck.id })}
-          >
-            <Deck {...deck} />
-          </Button>
-        ))}
+        <FlatList
+          data={decks}
+          renderItem={({ item }) => (
+            <Button
+              onPress={() => navigate('DeckDetails', { deckId: item.id })}
+            >
+              <Deck {...item} />
+            </Button>
+          )}
+          keyExtractor={item => item.id}
+        />
         <FloatButton onPress={() => navigate('NewDeck')}>
           <FloatText>Create a Deck</FloatText>
         </FloatButton>
