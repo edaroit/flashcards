@@ -30,12 +30,12 @@ class NewQuestion extends Component {
       <Container>
         <Input
           value={question}
-          placeholder="What's the worst React derivate?"
+          placeholder="The Earth is flat?"
           onChangeText={value => this.setState({ question: value })}
         />
         <Input
           value={answer}
-          placeholder="React Native"
+          placeholder="No."
           onChangeText={value => this.setState({ answer: value })}
         />
         <Button onPress={() => this.handleSubmit()} title="Send" />

@@ -24,7 +24,7 @@ class NewDeck extends Component {
           <Title>Flashcards</Title>
         </Header>
         <Input
-          placeholder="Title"
+          placeholder="Important Subject"
           onChangeText={value => this.setState({ title: value })}
         />
         <Button onPress={() => this.handleSubmit()} title="Send" />
