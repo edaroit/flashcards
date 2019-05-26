@@ -10,7 +10,10 @@ const DeckDetails = ({ deck, navigation }) => {
     <Container>
       <Title>{title}</Title>
       <Count>{cards.length}</Count>
-      <Button onPress={() => navigate('Quiz')} title="Start a Quiz" />
+      <Button
+        onPress={() => navigate('Quiz', { deckId: id })}
+        title="Start a Quiz"
+      />
       <Button
         onPress={() => navigate('NewQuestion', { deckId: id })}
         title="Create New Question"
