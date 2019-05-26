@@ -8,6 +8,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { darkBlue, white } from '../../utils/theme'
 import Home from '../Home'
 import DeckDetails from '../DeckDetails'
+import NewDeck from '../NewDeck'
 import NewQuestion from '../NewQuestion'
 import Quiz from '../Quiz'
 
@@ -59,6 +60,7 @@ const MainNavigator = {
     },
   },
   DeckDetails: { screen: DeckDetails },
+  NewDeck: { screen: NewDeck },
   NewQuestion: { screen: NewQuestion },
   Quiz: { screen: Quiz },
 }
