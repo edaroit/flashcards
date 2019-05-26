@@ -2,8 +2,9 @@ import styled from 'styled-components/native'
 import { Button as BaseButton } from 'react-native-elements'
 
 export const Answer = styled.Text`
+  color: ${props => props.theme.lightBlue};
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 600;
   padding: 4px 0;
 `
 
@@ -16,6 +17,7 @@ export const Button = styled(BaseButton)`
 `
 
 export const Cards = styled.Text`
+  color: ${props => props.theme.lightBlue};
   font-size: 20px;
   padding: 4px 0;
 `
@@ -25,7 +27,8 @@ export const Container = styled.View`
 `
 
 export const Question = styled.Text`
+  color: ${props => props.theme.lightBlue};
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 800;
   padding: 4px 0;
 `
