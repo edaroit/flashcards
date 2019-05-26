@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Container, Header, Title } from './styles'
+import { Button, Container, Header, Title } from './styles'
 import Deck from '../Deck'
 import { loadDecks } from '../../actions/deck'
 
@@ -22,12 +21,12 @@ class Home extends Component {
           <Title>Flashcards</Title>
         </Header>
         {decks.map(deck => (
-          <TouchableOpacity
+          <Button
             key={deck.id}
             onPress={() => navigate('DeckDetails', { deckId: deck.id })}
           >
             <Deck {...deck} />
-          </TouchableOpacity>
+          </Button>
         ))}
       </Container>
     )
