@@ -8,7 +8,7 @@ export const Button = styled(BaseButton)`
 export const Container = styled.View`
   flex: 1;
   background-color: ${props => props.theme.gray};
-  padding: 10px;
+  padding: 20px;
 `
 
 export const Count = styled.Text`
