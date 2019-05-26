@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Button, Container, Count, Title } from './styles'
+import { Button, Container, Cards, Title } from './styles'
 
 const DeckDetails = ({ deck, navigation }) => {
   const { id, title, cards } = deck
@@ -9,7 +9,7 @@ const DeckDetails = ({ deck, navigation }) => {
   return (
     <Container>
       <Title>{title}</Title>
-      <Count>{cards.length} cards</Count>
+      <Cards>{cards.length} cards</Cards>
       <Button
         onPress={() => navigate('Quiz', { deckId: id })}
         title="Start a Quiz"
