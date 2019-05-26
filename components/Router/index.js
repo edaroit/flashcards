@@ -63,6 +63,7 @@ const MainNavigator = {
   DeckDetails: {
     screen: DeckDetails,
     navigationOptions: ({ navigation }) => ({
+      title: 'Deck Details',
       headerLeft: (
         <HeaderBackButton
           onPress={() => navigation.navigate('Home')}
@@ -71,9 +72,24 @@ const MainNavigator = {
       ),
     }),
   },
-  NewDeck: { screen: NewDeck },
-  NewQuestion: { screen: NewQuestion },
-  Quiz: { screen: Quiz },
+  NewDeck: {
+    screen: NewDeck,
+    navigationOptions: {
+      title: 'Create a Deck',
+    },
+  },
+  NewQuestion: {
+    screen: NewQuestion,
+    navigationOptions: {
+      title: 'Create new Question',
+    },
+  },
+  Quiz: {
+    screen: Quiz,
+    navigationOptions: {
+      title: 'Quiz',
+    },
+  },
 }
 
 export default createAppContainer(createStackNavigator(MainNavigator))
