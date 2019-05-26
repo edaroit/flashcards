@@ -2,11 +2,15 @@ import { AsyncStorage } from 'react-native'
 
 const DECKS_STORAGE_KEY = 'RNDFlashcards:decks'
 
+const sanitizeDecks = decks => {
+  if (decks === null) return []
+  return decks
+}
+
 export const getDecks = () => {
   return AsyncStorage.getItem(DECKS_STORAGE_KEY).then(results => {
     const decks = JSON.parse(results)
-    if (decks === null) return []
-    return decks
+    return sanitizeDecks(decks)
   })
 }
 
@@ -25,7 +29,7 @@ export const postCard = (deckId, card) => {
 
 export const postDeck = deck => {
   return AsyncStorage.getItem(DECKS_STORAGE_KEY).then(results => {
-    const decks = JSON.parse(results)
+    const decks = sanitizeDecks(JSON.parse(results))
     AsyncStorage.setItem(DECKS_STORAGE_KEY, JSON.stringify([...decks, deck]))
   })
 }
