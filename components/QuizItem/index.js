@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
-import { Button } from './styles'
+import {
+  Answer,
+  AnswerButtons,
+  Button,
+  Cards,
+  Container,
+  Question,
+} from './styles'
 
 export default class extends Component {
   state = { showAnswer: false }
@@ -10,19 +16,22 @@ export default class extends Component {
     const { card, onAnswer, current, total } = this.props
 
     return (
-      <View>
-        <Text>
+      <Container>
+        <Cards>
           {current}/{total}
-        </Text>
-        <Text>{card.question}</Text>
-        <Text>{showAnswer ? card.answer : ''}</Text>
+        </Cards>
+        <Question>{card.question}</Question>
+        <Answer>{showAnswer ? card.answer : ''}</Answer>
         <Button
           title={`${showAnswer ? 'Hide' : 'Show'} Answer`}
           onPress={() => this.setState({ showAnswer: !showAnswer })}
+          type="outline"
         />
-        <Button title="Correct" onPress={() => onAnswer(true)} />
-        <Button title="Wrong" onPress={() => onAnswer(false)} />
-      </View>
+        <AnswerButtons>
+          <Button title="Correct" onPress={() => onAnswer(true)} />
+          <Button title="Wrong" onPress={() => onAnswer(false)} />
+        </AnswerButtons>
+      </Container>
     )
   }
 }
