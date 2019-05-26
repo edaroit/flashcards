@@ -3,6 +3,10 @@ import { SafeAreaView, Text } from 'react-native'
 import { connect } from 'react-redux'
 import QuizItem from '../QuizItem'
 import QuizResult from '../QuizResult'
+import {
+  clearLocalNotification,
+  setLocalNotification,
+} from '../../utils/notification'
 
 class Quiz extends Component {
   constructor() {
@@ -11,6 +15,21 @@ class Quiz extends Component {
       cardIndex: 0,
       correctAnswers: 0,
     }
+  }
+
+  async componentDidUpdate() {
+    const { cardIndex } = this.state
+    const { deck } = this.props
+    const totalCards = deck.cards.length
+
+    if (cardIndex === totalCards) {
+      await this.delayNotificationUntilTomorrow()
+    }
+  }
+
+  delayNotificationUntilTomorrow = async () => {
+    await clearLocalNotification()
+    await setLocalNotification()
   }
 
   handleAwnser = awnser => {
@@ -32,21 +51,22 @@ class Quiz extends Component {
   render() {
     const { deck, navigation } = this.props
     const { cardIndex, correctAnswers } = this.state
+    const totalCards = deck.cards.length
 
     return (
       <SafeAreaView>
-        {cardIndex < deck.cards.length ? (
+        {cardIndex < totalCards ? (
           <QuizItem
             card={deck.cards[cardIndex]}
             onAnswer={this.handleAwnser}
             current={cardIndex + 1}
-            total={deck.cards.length}
+            total={totalCards}
           />
         ) : (
           <QuizResult
             deckId={deck.id}
             correctAnswers={correctAnswers}
-            total={deck.cards.length}
+            total={totalCards}
             navigation={navigation}
             cleanQuiz={this.cleanQuiz}
           />
